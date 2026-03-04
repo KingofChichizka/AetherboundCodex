@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Ætherbound codex</title>
+        <link rel="stylesheet" href="page.css">
+        <script src="client.js"></script>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="banner">
+            <button id="refresh" onclick="refresh()">=</button>
+            <label for="flt_sortby">
+                <select id="flt_sortby" class="flt" name="flt_sortby">
+                    <option value="title">Title</option>
+                    <option value="descr">Description</option>
+                    <option value="date_cr">Date of creation</option>
+                    <option value="date_ed">Date of editing</option>
+                </select>
+                Order by
+            </label>
+            <label><input id="flt_sortdir" class="flt" type="checkbox">Reverse order</label>
+            <input id="flt_match" class="flt" type="text">
+            <select id="flt_matchby" class="flt">
+                <option value="title">Title</option>
+                <option value="descr">Description</option>
+                <option value="tag">Tag</option>
+            </select>
+            <p id="notecount"></p>
+        </div>
+        <button id="addnote" onclick="addNote()">+</button>
+        <div id="pagecont">
+            <div id="notes"></div>
+            <div id="viewwin">
+                <input type="text" id="title" placeholder="Title">
+                <div id="vwtags">
+                    <input type="text" id="tagin" placeholder="tags">
+                    <div id="tags"></div>
+                </div>
+                <div id="desc_display" hidden></div>
+                <textarea id="desc" placeholder="description"></textarea>
+                <button id="notesave" onclick="noteSave()">Save note</button><br>
+                <div id="butbox">
+                    <button id="notefav" onclick="noteFav()">Favourite</button>
+                    <button id="butDisplay" onclick="descDisplay()">Edit mode</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
